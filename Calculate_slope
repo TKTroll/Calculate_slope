@@ -1,0 +1,148 @@
+#!/usr/bin/env python
+# still being made and stfu about the code being unorganized
+x1 = int(input("first coordinate x value: "))
+y1 = int(input("first coordinate y value: "))
+x2 = int(input("second coordinate x value: "))
+y2 = int(input("second coordinate y value: "))
+# x1 = 8
+# y1 = 12
+# x2 = 2
+# y2 = 4
+
+slope_numerator = y2 - y1
+slope_denominator = x2 - x1
+m_fraction = (str(slope_numerator) + "/" + str(slope_denominator))
+if slope_denominator == 0:
+    print("x = " + str(x2))
+    exit()
+elif slope_numerator == 0:
+    print("y = " + str(y2))
+    exit()
+else:
+    m = (slope_numerator / slope_denominator)
+print(m_fraction)
+print("slope = " + str(m))
+b = (m * x1) - y1
+b = -b
+print("y intercept = " + str(b))
+b_decimal = str(b)[::-1].find('.')
+b_int = int(b)
+print("y int intercept = " + str(b_int))
+print("y intercept decimals : " + str(b_decimal))
+#m_decimal = str(m)[::-1].find('.')
+#print("M decimals : " + str(m_decimal))
+m_int = int(m)
+print("int slope = " + str(m_int))
+
+if b != b_int:
+    b_frac = (str(b * (10 * b_decimal)) + "/" + str(1 * (10 * b_decimal)))
+    b = (b * (10 * b_decimal)) / (1 * (10 * b_decimal))
+    if b != 0: # b is not zero
+        if b <= 0:  # b is negative
+            if m != m_int:  # m is a float
+                if b != 0:  # b is not zero
+                    print("y = " + str(m_fraction) + "x" + " " + b_frac)
+                else:
+                    print("y = " + str(m_fraction) + "x")
+            elif b != 0:  # m is not a float
+                print("y = " + str(m_int) + "x" + " " + b_frac)
+            else:
+                print("y = " + str(m_int) + "x")
+        else:  # b is not negative
+            if m != m_int:  # m is a float
+                if b != 0:
+                    print("y = " + str(m_fraction) + "x" + " + " + b_frac)
+                else:
+                    print("y = " + str(m_fraction) + "x")
+            elif b != 0:  # m is not a float
+                print("y = " + str(m_int) + "x" + " + " + b_frac)
+            else:
+                print("y = " + str(m_int) + "x")
+    elif b <= 0:  # b is negative
+        if m != m_int:  # m is a float
+            if b != 0: # b is not zero
+                print("y = " + str(m_fraction) + "x" + " " + b_frac)
+            else:
+                print("y = " + str(m_fraction) + "x")
+        elif b != 0:  # m is not a float
+            print("y = " + str(m_int) + "x" + " " + b_frac)
+        else:
+            print("y = " + str(m_int) + "x")
+    else:  # b is not negative
+        if m != m_int:  # m is a float
+            if b != 0:
+                print("y = " + str(m_fraction) + "x" + " + " + b_frac)
+            else:
+                print("y = " + str(m_fraction) + "x")
+        elif b != 0:  # m is not a float
+            print("y = " + str(m_int) + "x" + " + " + b_frac)
+        else:
+            print("y = " + str(m_int) + "x")
+else:
+    if b != 0: # b is not zero
+        if b <= 0:  # b is negative
+            if m != m_int:  # m is a float
+                if b != 0:  # b is not zero
+                    print("y = " + str(m_fraction) + "x" + " " + str(b))
+                else:
+                    print("y = " + str(m_fraction) + "x")
+            elif b != 0:  # m is not a float
+                print("y = " + str(m_int) + "x" + " " + str(b))
+            else:
+                print("y = " + str(m_int) + "x")
+        else:  # b is not negative
+            if m != m_int:  # m is a float
+                if b != 0:
+                    print("y = " + str(m_fraction) + "x" + " + " + str(b))
+                else:
+                    print("y = " + str(m_fraction) + "x")
+            elif b != 0:  # m is not a float
+                print("y = " + str(m_int) + "x" + " + " + str(b))
+            else:
+                print("y = " + str(m_int) + "x")
+    elif b <= 0:  # b is negative
+        if m != m_int:  # m is a float
+            if b != 0: # b is not zero
+                print("y = " + str(m_fraction) + "x" + " " + str(b))
+            else:
+                print("y = " + str(m_fraction) + "x")
+        elif b != 0:  # m is not a float
+            print("y = " + str(m_int) + "x" + " " + str(b))
+        else:
+            print("y = " + str(m_int) + "x")
+    else:  # b is not negative
+        if m != m_int:  # m is a float
+            if b != 0:
+                print("y = " + str(m_fraction) + "x" + " + " + str(b))
+            else:
+                print("y = " + str(m_fraction) + "x")
+        elif b != 0:  # m is not a float
+            print("y = " + str(m_int) + "x" + " + " + str(b))
+        else:
+            print("y = " + str(m_int) + "x")
+
+
+
+
+
+
+#if statements to properly print the equation of the line
+# if b < 0:
+#     if isinstance(m, int):
+#         print("y = " + str(m) + "x" " - " + str(b))
+#     else:
+#         print("y = " + str(m_fraction) + "x" + " - " + str(b))
+# elif isinstance(m, float):
+#     if b < 0:
+#         print("y = " + str(m_fraction) + "x" " + " + str(b))
+#     else:
+#         print("y = " + str(m_fraction) + "x" + " " + str(b))
+# else:
+#     print("y = " + str(m) + "x" " + " + str(b))
+
+
+
+
+#y = mx + b
+#y = -6/2x + b
+#10 = ()
